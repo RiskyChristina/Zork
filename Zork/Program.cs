@@ -97,7 +97,7 @@ namespace Zork
         {
             { "Rocky Trail", "South of House", "Canyon View" },
             { "Forrest", "West of House", "Behind House" },
-            { "Dense Woods", "North of House", "Clearing"  }
+            { "Dense Woods", "North of House", "Clearing" }
         };
 
         private static readonly List<Commands> Directions = new List<Commands>
