@@ -40,12 +40,12 @@ namespace Zork
                     case Commands.SOUTH:
                     case Commands.EAST:
                     case Commands.WEST:
-                        
+
                         if (Move(command) == false)
                         {
-                            Console.WriteLine("The way is shut!");
+                            Console.WriteLine("The way is shut!");  
                         }
-                            else
+                        else
                         {
                             Console.WriteLine($"You moved {command}.");
                         }
@@ -66,7 +66,7 @@ namespace Zork
             switch (command)
             {
                 case Commands.NORTH when Location.Row < Rooms.GetLength(0) - 1:
-                    Location.Row--;
+                    Location.Row++;
                     break;
 
                 case Commands.SOUTH when Location.Row > 0:
@@ -93,9 +93,11 @@ namespace Zork
 
         private static bool IsDirection(Commands command) => Directions.Contains(command);
 
-        private static readonly String[,] Rooms =
+        private static readonly string[,] Rooms =
         {
-            { "Forrest", "West of House", "Behind House", "Clearing", "Canyon View" }
+            { "Rocky Trail", "South of House", "Canyon View" },
+            { "Forrest", "West of House", "Behind House" },
+            { "Dense Woods", "North of House", "Clearing"  }
         };
 
         private static readonly List<Commands> Directions = new List<Commands>
@@ -106,6 +108,6 @@ namespace Zork
             Commands.WEST
         };
 
-        private static (int Row, int Column) Location = (0, 1);
+        private static (int Row, int Column) Location = (1, 1);
     }
 }
